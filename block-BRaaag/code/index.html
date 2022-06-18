@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment: Using JSX</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Movie Watch list</h1>
+      <input type="text" placeholder="Enter movie name" />
+      <ul class="todos"></ul>
+    </div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      let ulRoot = document.querySelector('.todos');
+      let input = document.querySelector('input[type="text"]');
+
+      let allMovies = [
+        {
+          name: 'Forest Gump',
+          watched: false,
+        },
+        {
+          name: 'Inception',
+          watched: true,
+        },
+      ];
+
+      input.addEventListener('keyup', (event) => {
+        if (event.keyCode === 13) {
+          allMovies.push({
+            name: event.target.value,
+            watched: false,
+          });
+          event.target.value = '';
+          createMovieUI(allMovies, ulRoot);
+        }
+      });
+
+      function handleEdit(event) {
+        let id = event.target.id;
+        allMovies[id].watched = !allMovies[id].watched;
+        createMovieUI(allMovies, ulRoot);
+      }
+
+      let elm = React.createElement;
+
+      function createMovieUI(data, ulRoot) {
+        let movieUI = data.map((movie, i) => {
+          return (
+            <li>
+              <label for={i}>{movie.name}</label>
+              <button id={i} onClick={handleEdit}>
+                {movie.watched ? 'Watched' : 'To Watched'}
+              </button>
+            </li>
+          );
+        });
+        ReactDOM.render(movieUI, ulRoot);
+      }
+
+      createMovieUI(allMovies, ulRoot);
+    </script>
+  </body>
+</html>
