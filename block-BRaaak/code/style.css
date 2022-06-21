@@ -1,0 +1,65 @@
+body {
+  text-align: center;
+}
+h1 {
+  font-size: 2rem;
+}
+.date {
+  position: absolute;
+  top: 3%;
+  right: 6%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(255, 72, 0);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+h3 {
+  font-size: 1.5rem;
+  color: rgb(255, 72, 0);
+}
+.info {
+  font-size: 1.2rem;
+  text-align: justify;
+  padding: 0 2rem;
+}
+#root {
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  flex: 0 1 25%;
+  padding: 2rem;
+}
+.card-info {
+  position: relative;
+  margin-left: 2rem;
+}
+img {
+  width: 400px;
+}
+small {
+  padding: 1rem;
+}
+.photos {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  bottom: 56%;
+  left: 0%;
+  width: 70px;
+  height: 15px;
+  background-color: rgb(255, 72, 0);
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 1rem;
+}
+.month {
+  text-transform: uppercase;
+}
