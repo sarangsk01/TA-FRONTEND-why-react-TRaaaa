@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment: Using JSX</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      let h1 = (
+        <>
+          <img
+            src="https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            alt=""
+          />
+          <h2>21 Jun</h2>
+          <p className="photos">photos</p>
+          <h1>City Lights in New York</h1>
+          <h3>The city that never sleeps.</h3>
+          <p className="info">
+            New York, the largest city in the U.S., is an <br />
+            architectural marvel with plenty of historic
+            <br /> monuments, magnificent buildings and
+            <br /> countless dazzling skyscrapers."
+          </p>
+          <small>6 mins ago</small>
+          <small>67 comments</small>
+        </>
+      );
+      ReactDOM.render(h1, document.getElementById('root'));
+    </script>
+  </body>
+</html>
