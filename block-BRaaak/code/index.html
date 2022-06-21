@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment: Using JSX</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+      let cardInfo = {
+        title: 'City Lights in New York',
+        date: new Date('2022-06-21'),
+        comments: 67,
+        subTitle: 'The city that never sleeps.',
+        description:
+          'New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.',
+        category: 'photos',
+        imageURL:
+          'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+      };
+      let Card = (props) => {
+        return (
+          <>
+            <div className="card-info">
+              <img src={cardInfo.imageURL} alt="" />
+              <div className="date">
+                <div className="day"> {cardInfo.date.getDate()}</div>
+                <div className="month">
+                  {monthNames[cardInfo.date.getMonth()].slice(0, 3)}
+                </div>
+              </div>
+              <p className="photos"> {cardInfo.category}</p>
+              <h1>{cardInfo.title}</h1>
+              <h3>{cardInfo.subTitle}</h3>
+              <p className="info">{cardInfo.description}</p>
+              <small>6 mins ago</small>
+              <small>{cardInfo.comments}comments</small>
+            </div>
+          </>
+        );
+      };
+      let AllCards = (
+        <>
+          <Card />
+          <Card />
+          <Card />
+        </>
+      );
+      ReactDOM.render(AllCards, document.getElementById('root'));
+    </script>
+  </body>
+</html>
