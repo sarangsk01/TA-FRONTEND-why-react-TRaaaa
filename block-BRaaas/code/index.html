@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+      function handleClick(event) {
+        alert('Hello React Event');
+      }
+      <button onClick={handleClick}>Click Me</button>;
+      function handleClick2(event) {
+        alert('To learn React use https://reactjs.org');
+        alert('React and ReactDOM works together');
+        alert('Babel helps in writing JSX');
+      }
+      <button onClick={handleClick2}>How can I help you?</button>;
+      function handleClick3(name, event) {
+        console.log(event);
+        alert(`Hello${name}`);
+      }
+      <button onClick={(event) => handleClick3(props.name, event)}>
+        Arya
+      </button>;
+      <button onClick={(event) => handleClick3(props.name, event)}>
+        John
+      </button>;
+      <button onClick={(event) => handleClick3(props.name, event)}>
+        Bran
+      </button>;
+    </script>
+  </body>
+</html>
