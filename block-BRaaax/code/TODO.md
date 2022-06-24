@@ -32,7 +32,7 @@
   size="large"
   label="Button"
   type="tertiary"
-  onClickHandler={() => alert("You Clicked Me!")}
+  onClickHandler={() => alert('You Clicked Me!')}
 />
 
 ```
